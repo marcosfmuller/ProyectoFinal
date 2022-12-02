@@ -1,0 +1,27 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h2> <div class="row justify-content-center"> BIENVENIDOS AL SISTEMA <br> </div> </h2>
+<h2> <div class="row justify-content-center"> CLIENTES </div> </h2>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<h2><div class="row justify-content-center">Listado de Clientes</div></h2>
+
+<form action="{% url 'clientes' %}" method="POST">
+    {% csrf_token %}
+    <table>
+    
+        {{ form.as_table }}
+    
+    </table>
+    
+    <input type="submit" value="GUARDAR CLIENTE">
+  
+</form>
+
+{{ mensaje }}
+{% endblock %}
+

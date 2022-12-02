@@ -1,0 +1,14 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h2> <div class="row justify-content-center"> BIENVENIDOS AL SISTEMA <br> </div> </h2>
+<h2> <div class="row justify-content-center"> INICIO </div> </h2>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<h2><div class="row justify-content-center">Este es el contenido del inicio</div></h2>
+
+{{ mensaje }}
+{% endblock %}
