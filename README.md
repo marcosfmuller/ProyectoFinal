@@ -35,7 +35,7 @@ Dentro de cada opcion tenemos un par de secciones en el body para completar con 
     * Eliminar: en desarrollo
 * `Vendedores:`
   * Cargar Vendedor: se da de alta un nuevo vendedor en la base de datos.
-  * Listar Clientes: lista todos los vendedores cargados en la base de datos.
+  * Listar Vendedor: lista todos los vendedores cargados en la base de datos.
     * Buscar: Permite filtrar vendedor por nombre.
     * Modificar: en desarrollo
     * Eliminar: en desarrollo
