@@ -1,0 +1,44 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5 row justify-content-center">DATOS DE CLIENTES</h1>
+{% endblock %}
+
+{% block contenido_seccion %}
+<h1 class="text-white row justify-content-center">LISTADO DE CLIENTES</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<form method=GET action="{% url 'clientesresbuscar' %}">
+
+    Buscar por pais: <input type="text" name="pais" id="pais">
+    <input type="submit" value="BUSCAR">
+
+</form>
+<br>
+<h2 style="color:red"> {{ mensaje }} </h2>
+<br>    
+
+<ul>
+    {% for cliente in clientes %}
+    <left>
+    <li>
+    NOMBRE: <i>{{cliente.nombre}}</i> <br>
+    PAIS: <i>{{cliente.pais}}</i> <br>
+    EMAIL: <i>{{cliente.email}}</i> <br>
+    TELEFONO: <i>{{cliente.telefono}}</i> <br>
+    </li>
+    </left>
+
+    {% endfor %}
+</ul>
+<br>
+<br>
+<a href="{% url 'clientes' %}" class="btn btn-primary">Volver</a>
+<a href="#!" class="btn btn-primary">Modificar Cliente</a>
+<a href="#!" class="btn btn-primary">Eliminar Cliente</a>
+
+{% endblock %}

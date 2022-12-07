@@ -6,7 +6,7 @@ class Cliente(models.Model):
     nombre = models.CharField(max_length=100)
     pais = models.CharField(max_length=20)
     email = models.EmailField()
-    telefono = models.CharField(max_length=11)
+    telefono = models.CharField(max_length=20)
 
     def __str__(self):
         return self.nombre + ' - ' + self.pais
@@ -23,7 +23,7 @@ class Vendedor(models.Model):
     nombre = models.CharField(max_length=100)
     mercado = models.CharField(max_length=20)
     email = models.EmailField()
-    telefono = models.CharField(max_length=11)
+    telefono = models.CharField(max_length=20)
 
     def __str__(self):
         return self.nombre + ' - ' + self.mercado

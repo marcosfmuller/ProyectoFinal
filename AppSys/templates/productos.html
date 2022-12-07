@@ -7,8 +7,16 @@
 <h2> <div class="row justify-content-center"> PRODUCTOS </div> </h2>
 {% endblock %}
 
-{% block contenido_que_cambia %}
-<h2><div class="row justify-content-center">Listado de Productos</div></h2>
+{% block contenido_seccion %}
+<h1 class="text-white row justify-content-center">SECCION DE PRODUCTOS</h1>
+{% endblock %}
 
+{% block contenido_que_cambia %}
+
+<center>
 {{ mensaje }}
+<br><br>
+<a href="{% url 'productosform' %}" class="btn btn-primary">Cargar Producto</a>
+<a href="{% url 'productoslist' %}" class="btn btn-primary">Listar Productos</a>
+</center>
 {% endblock %}

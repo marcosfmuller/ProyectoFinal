@@ -1,0 +1,44 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5 row justify-content-center">DATOS DE VENDEDORES</h1>
+{% endblock %}
+
+{% block contenido_seccion %}
+<h1 class="text-white row justify-content-center">LISTADO DE VENDEDORES</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<form method=GET action="{% url 'vendedoresresbuscar' %}">
+
+    Buscar por nombre: <input type="text" name="nombre" id="nombre">
+    <input type="submit" value="BUSCAR">
+
+</form>
+<br>
+<h2 style="color:red"> {{ mensaje }} </h2>
+<br>    
+
+<ul>
+    {% for vendedor in vendedores %}
+    <left>
+    <li>
+    NOMBRE: <i>{{vendedor.nombre}}</i> <br>
+    MERCADO: <i>{{vendedor.mercado}}</i> <br>
+    EMAIL: <i>{{vendedor.email}}</i> <br>
+    TELEFONO: <i>{{vendedor.telefono}}</i> <br>
+    </li>
+    </left>
+
+    {% endfor %}
+</ul>
+<br>
+<br>
+<a href="{% url 'vendedores' %}" class="btn btn-primary">Volver</a>
+<a href="#!" class="btn btn-primary">Modificar Vendedor</a>
+<a href="#!" class="btn btn-primary">Eliminar Vendedor</a>
+
+{% endblock %}

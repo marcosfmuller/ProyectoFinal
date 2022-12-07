@@ -1,0 +1,43 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5 row justify-content-center">DATOS DE PRODUCTOS</h1>
+{% endblock %}
+
+{% block contenido_seccion %}
+<h1 class="text-white row justify-content-center">LISTADO DE PRODUCTOS</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<form method=GET action="{% url 'productosresbuscar' %}">
+
+    Buscar por nombre: <input type="text" name="nombre" id="nombre">
+    <input type="submit" value="BUSCAR">
+
+</form>
+<br>
+<h2 style="color:red"> {{ mensaje }} </h2>
+<br>    
+
+<ul>
+    {% for producto in productos %}
+    <left>
+    <li>
+    NOMBRE: <i>{{producto.nombre}}</i> <br>
+    PRECIO: USD <i>{{producto.precio}}</i> <br>
+    STOCK: <i>{{producto.stock}}</i> <br>
+    </li>
+    </left>
+
+    {% endfor %}
+</ul>
+<br>
+<br>
+<a href="{% url 'productos' %}" class="btn btn-primary">Volver</a>
+<a href="#!" class="btn btn-primary">Modificar Producto</a>
+<a href="#!" class="btn btn-primary">Eliminar Producto</a>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">RESULTADO BUSQUEDA DE VENDEDORES</h1>
+{% endblock %}
+
+{% block contenido_seccion %}
+<h1 class="text-white row justify-content-center">RESULTADO BUSQUEDA DE VENDEDORES</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+    {% if vendedores %}
+    <ul>
+        {% for vendedor in vendedores %}
+        <left>
+            <li>
+            NOMBRE: <i>{{vendedor.nombre}}</i> <br>
+            MERCADO: <i>{{vendedor.mercado}}</i> <br>
+            EMAIL: <i>{{vendedor.email}}</i> <br>
+            TELEFONO: <i>{{vendedor.telefono}}</i> <br>
+            </li>
+        </left>
+            <br>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <h1 class="row justify-content-center">No hay vendedores con ese nombre!!!</h1>
+
+    {% endif %}
+
+    <a href="{% url 'vendedoreslist' %}" class="btn btn-primary">Volver</a>
+
+    
+{% endblock %}

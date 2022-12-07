@@ -7,8 +7,16 @@
 <h2> <div class="row justify-content-center"> VENDEDORES </div> </h2>
 {% endblock %}
 
-{% block contenido_que_cambia %}
-<h2><div class="row justify-content-center">Listado de Vendedores</div></h2>
+{% block contenido_seccion %}
+<h1 class="text-white row justify-content-center">SECCION DE VENDEDORES</h1>
+{% endblock %}
 
+{% block contenido_que_cambia %}
+
+<center>
 {{ mensaje }}
+<br><br>
+<a href="{% url 'vendedoresform' %}" class="btn btn-primary">Cargar Vendedores</a>
+<a href="{% url 'vendedoreslist' %}" class="btn btn-primary">Listar Vendedores</a>
+</center>
 {% endblock %}

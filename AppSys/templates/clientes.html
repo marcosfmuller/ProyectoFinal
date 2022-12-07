@@ -7,20 +7,16 @@
 <h2> <div class="row justify-content-center"> CLIENTES </div> </h2>
 {% endblock %}
 
-{% block contenido_que_cambia %}
-<h2><div class="row justify-content-center">Listado de Clientes</div></h2>
-
-<form action="{% url 'clientes' %}" method="POST"> {% csrf_token %}
-    <table>
-    
-        {{ form.as_table }}
-    
-    </table>
-    
-    <input type="submit" value="GUARDAR CLIENTE">
-  
-</form>
-
-{{ mensaje }}
+{% block contenido_seccion %}
+<h1 class="text-white row justify-content-center">SECCION DE CLIENTES</h1>
 {% endblock %}
 
+{% block contenido_que_cambia %}
+
+<center>
+{{ mensaje }}
+<br><br>
+<a href="{% url 'clientesform' %}" class="btn btn-primary">Cargar Cliente</a>
+<a href="{% url 'clienteslist' %}" class="btn btn-primary">Listar Clientes</a>
+</center>  
+{% endblock %}

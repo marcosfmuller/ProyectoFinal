@@ -6,11 +6,18 @@
 <h1 class="mb-5">FORMULARIO DE CLIENTES</h1>
 {% endblock %}
 
-{% block contenido_que_cambia %}
-<h1>FORMULARIO DE CLIENTES</h1>
+{% block contenido_seccion %}
+<h1 class="text-white row justify-content-center">ALTA DE CLIENTES</h1>
+{% endblock %}
 
-<form method="post">{% csrf_token %}
-    {{ form.as_p }}
+{% block contenido_que_cambia %}
+
+<form method="POST"> {% csrf_token %}
+   
+    <table>
+    {{ form.as_table }}
+    </table>
+    <br>
     <input type="submit" value="GUARDAR">
 
 </form>

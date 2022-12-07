@@ -4,7 +4,7 @@ class ClienteForm(forms.Form):
     nombre = forms.CharField(max_length=100)
     pais = forms.CharField(max_length=20)
     email = forms.EmailField()
-    telefono = forms.CharField(max_length=11)
+    telefono = forms.CharField(max_length=20)
 
 class ProductoForm(forms.Form):
     nombre = forms.CharField(max_length=100)
@@ -15,4 +15,4 @@ class VendedorForm(forms.Form):
     nombre = forms.CharField(max_length=100)
     mercado = forms.CharField(max_length=20)
     email = forms.EmailField()
-    telefono = forms.CharField(max_length=11)
+    telefono = forms.CharField(max_length=20)
